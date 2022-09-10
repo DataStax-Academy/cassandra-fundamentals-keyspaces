@@ -1,9 +1,9 @@
 <!-- TOP -->
 <div class="top">
   <img src="https://datastax-academy.github.io/katapod-shared-assets/images/ds-academy-logo.svg" />
-  <div style="position:absolute; top:20px; left:350px;">
-    <span style="font-size:2.5em;display:block;">Apache Cassandra® Keyspaces and Data Replication Strategies</span>
-    <span class="font-size:1em;display:block;">ℹ️ For technical support, please contact us via <a href="mailto:aleksandr.volochnev@datastax.com">email</a> or <a href="https://dtsx.io/aleks">LinkedIn</a>.</span> 
+  <div class="scenario-title-section">
+    <span class="scenario-title">Apache Cassandra® Keyspaces and Data Replication Strategies</span>
+    <span class="scenario-subtitle">ℹ️ For technical support, please contact us via <a href="mailto:aleksandr.volochnev@datastax.com">email</a> or <a href="https://dtsx.io/aleks">LinkedIn</a>.</span> 
   </div>
 </div>
 
