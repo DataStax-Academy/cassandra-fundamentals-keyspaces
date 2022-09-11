@@ -13,17 +13,17 @@
     <div class="container px-4 py-2">
      <div class="row g-4 py-2 row-cols-1 row-cols-lg-1">
       <div class="feature col div-choice">
-            <div class="scenario-description">Learn about essential data definition and manipulation statements in Cassandra Query Language (CQL).</div>
+            <div class="scenario-description">Learn how to create a keyspace and select a data replication strategy for a Cassandra NoSQL database.</div>
             <ul>
               <li><span class="scenario-description-attribute">Difficulty</span>: Beginner</li>
-              <li><span class="scenario-description-attribute">Time</span>: 15 minutes</li>
+              <li><span class="scenario-description-attribute">Time</span>: 10 minutes</li>
             </ul>
             <div class="scenario-objectives">In this hands-on lab, you will:</div>
             <ul>
-              <li><span class="scenario-objective">Learn about Cassandra Query Language (CQL)</span></li>
-              <li><span class="scenario-objective">Use the CQL shell</span></li>
-              <li><span class="scenario-objective">Execute statements <code>CREATE KEYSPACE</code>, <code>USE</code> and <code>CREATE TABLE</code></span></li>
-              <li><span class="scenario-objective">Practice using statements <code>INSERT</code>, <code>SELECT</code>, <code>UPDATE</code> and <code>DELETE</code></span></li>              
+              <li><span class="scenario-objective">Create keyspaces using the CQL <code>CREATE KEYSPACE</code> statement</span></li>
+              <li><span class="scenario-objective">Understand data replication strategies <code>SimpleStrategy</code> and <code>NetworkTopologyStrategy</code></span></li>
+              <li><span class="scenario-objective">Learn how to select a data replication strategy and replication factor</span></li>
+              <li><span class="scenario-objective">Practice several useful CQL statements and CQL shell commands that work with keyspaces</span></li>              
             </ul>
       </div>
      </div>
