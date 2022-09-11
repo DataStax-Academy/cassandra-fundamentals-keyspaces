@@ -24,10 +24,10 @@
         <br/>
         <div class="scenario-objectives">In this hands-on lab, you explored:</div>
         <ul>
-              <li><span class="scenario-objective">Cassandra Query Language (CQL)</span></li>
-              <li><span class="scenario-objective">The CQL shell</span></li>
-              <li><span class="scenario-objective">Statements <code>CREATE KEYSPACE</code>, <code>USE</code> and <code>CREATE TABLE</code></span></li>
-              <li><span class="scenario-objective">Statements <code>INSERT</code>, <code>SELECT</code>, <code>UPDATE</code> and <code>DELETE</code></span></li>
+              <li><span class="scenario-objective">Keyspaces and the CQL <code>CREATE KEYSPACE</code> statement</span></li>
+              <li><span class="scenario-objective">Data replication strategies <code>SimpleStrategy</code> and <code>NetworkTopologyStrategy</code></span></li>
+              <li><span class="scenario-objective">Selecting a data replication strategy and replication factor</span></li>
+              <li><span class="scenario-objective">Useful CQL statements and CQL shell commands that work with keyspaces</span></li>
         </ul>
         <div class="resources">Learn more about Cassandra on <a href="https://datastax.com/dev" target="_blank">datastax.com/dev</a>:</div>
         <ul>
