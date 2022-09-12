@@ -9,9 +9,23 @@ tasks:
       pip install -U cqlsh
     command: | 
       docker run -p 9042:9042 -d \
-                 --name Cassandra \
-                 -v ${PWD}/config/cassandra.yaml:/etc/cassandra/cassandra.yaml \
-                 -v ${PWD}/config/cassandra-rackdc.properties:/etc/cassandra/cassandra-rackdc.properties cassandra:4.0
+                 --name Cassandra-1 \
+                 -e CASSANDRA_CLUSTER_NAME='Cassandra Cluster' \
+                 -e CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch \
+                 -e CASSANDRA_DC=DC-West \
+                 -e CASSANDRA_RACK=rack1 \
+                 cassandra:4.0
+      timeout 60 bash -c 'until cqlsh localhost 9042 -e "describe cluster" >/dev/null 2>&1; do sleep 1; done'
+      INSTANCE1=$(docker inspect --format='{{ .NetworkSettings.IPAddress }}' Cassandra-1)
+      docker run -p 9043:9042 -d \
+                 --name Cassandra-2 \
+                 -e CASSANDRA_CLUSTER_NAME='Cassandra Cluster' \
+                 -e CASSANDRA_SEEDS=$INSTANCE1 \
+                 -e CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch \
+                 -e CASSANDRA_DC=DC-East \
+                 -e CASSANDRA_RACK=rack1 \
+                 cassandra:4.0
+      INSTANCE2=$(docker inspect --format='{{ .NetworkSettings.IPAddress }}' Cassandra-2)
       source /home/gitpod/.astra/cli/astra-init.sh
 ports:
   - port: 9042
