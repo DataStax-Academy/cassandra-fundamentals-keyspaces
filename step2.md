@@ -22,17 +22,16 @@
 
 <div class="step-title">Start the CQL shell</div>
 
-The CQL shell is a command-line client for executing CQL statements over a Cassandra database interactively. 
+✅ Use `nodetool` to gather information about the cluster:
 
-✅ Get the CQL shell usage help:
 ```
-cqlsh -h
+docker exec -i -t Cassandra-1 bash -c 'nodetool status'
 ```
 
-✅ Start the CQL shell:
-```
-cqlsh
-```
+Take a note of the datacenter names and how many nodes are in each datacenter. 
+Since the cluster has only two nodes, we can have at most two replicas. 
+In a real-life production cluster, you can usually expect to have 3 or more nodes per datacenter and replication factors of 3 or higher.
+
 
 <!-- NAVIGATION -->
 <div id="navigation-bottom" class="navigation-bottom">
