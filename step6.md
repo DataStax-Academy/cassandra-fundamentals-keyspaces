@@ -20,25 +20,16 @@
 
 <!-- CONTENT -->
 
-<div class="step-title">Insert a row</div>
+<div class="step-title">How many replicas do you need?</div>
 
-✅ Add the row into our table using the CQL `INSERT` statement:
-```
-INSERT INTO users (email, name, age, date_joined) 
-VALUES ('joe@datastax.com', 'Joe', 25, '2020-01-01');
-```
+Having `3` replicas per datacenter is a good starting point for 
+relatively small clusters. As the number of nodes in a datacenter becomes larger, 
+a higher replication factor may become a better choice.
 
-✅ Insert another row into the table:
-
-<details>
-  <summary>Solution</summary> 
-
-```
-INSERT INTO users (email, name, age, date_joined) 
-VALUES ('jen@datastax.com', 'Jen', 27, '2020-01-01');
-```
-
-</details>
+The number of replicas can affect consistency, availability, latency and throughput.
+Increasing a replication factor improves availability as it becomes possible to tolerate 
+more replica failures. Also, a larger set of replicas can serve more concurrent requests 
+and result in better response times. 
 
 <!-- NAVIGATION -->
 <div id="navigation-bottom" class="navigation-bottom">

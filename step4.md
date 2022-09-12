@@ -20,16 +20,34 @@
 
 <!-- CONTENT -->
 
-<div class="step-title">Set a working keyspace</div>
+<div class="step-title">Keyspaces with SimpleStrategy</div>
 
-Many CQL statements work with tables, indexes and other objects defined within a specific keyspace. 
-For example, to refer to a table, we have to either use a fully-qualified name consisting of a keyspace name and a table name, 
-or set a working keyspace and simply refer to the table by its name. For convenience, we go with the second option.
+✅ Create a keyspace with name `simple_keyspace_1` that uses `SimpleStrategy` and a replication factor of `1`:
 
-✅ Set the current working keyspace:
 ```
-USE killr_video;
+CREATE KEYSPACE simple_keyspace_1
+WITH replication = {'class': 'SimpleStrategy', 
+                    'replication_factor': 1};
 ```
+
+The `replication_factor` option specifies a replication factor for the entire cluster. 
+That means that `SimpleStrategy` does not respect datacenter layouts and, therefore, is not a good choice 
+for production. 
+
+
+✅ Create a keyspace with name `simple_keyspace_2` that uses `SimpleStrategy` and a replication factor of `2`.
+Use tab completion in `cqlsh` to your advantage.
+
+<details>
+  <summary>Solution</summary>
+
+```
+CREATE KEYSPACE simple_keyspace_2
+WITH replication = {'class': 'SimpleStrategy', 
+                    'replication_factor': 2};
+```
+
+</details>
 
 <!-- NAVIGATION -->
 <div id="navigation-bottom" class="navigation-bottom">

@@ -20,7 +20,7 @@
 
 <!-- CONTENT -->
 
-<div class="step-title">Start the CQL shell</div>
+<div class="step-title">Cluster, datacenters, racks, nodes</div>
 
 ✅ Use `nodetool` to gather information about the cluster:
 

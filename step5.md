@@ -20,20 +20,34 @@
 
 <!-- CONTENT -->
 
-<div class="step-title">Create a table</div>
+<div class="step-title">Keyspaces with NetworkTopologyStrategy</div>
 
-A Cassandra table has named columns with data types, rows with values, and a primary key to uniquely identify each row. 
-As an example, let's create table `users` with four columns and primary key `email`. 
+✅ Create a keyspace with name `production_keyspace_1` that uses `NetworkTopologyStrategy` and a replication factor of `1` for `DC-West`:
 
-✅ Create the table:
 ```
-CREATE TABLE users (
-  email TEXT PRIMARY KEY,
-  name TEXT,
-  age INT,
-  date_joined DATE
-);
+CREATE KEYSPACE production_keyspace_1
+WITH replication = {'class': 'NetworkTopologyStrategy', 
+                    'DC-West': 1};
 ```
+
+With `NetworkTopologyStrategy`, a replication factor is specified for each datacenter separately. 
+In the above example, the `DC-West` datacenter will have a single copy of data. 
+Not replicating data to `DC-East` could be a valid use case but usually there will be replicas in each datacenter. 
+
+✅ Create a keyspace with name `production_keyspace_2` that uses `NetworkTopologyStrategy` 
+and `1` replica in each datacenter:
+
+<details>
+  <summary>Solution</summary>
+
+```
+CREATE KEYSPACE production_keyspace_2
+WITH replication = {'class': 'NetworkTopologyStrategy', 
+                    'DC-West': 1,
+                    'DC-East': 1};
+```
+
+</details>
 
 <!-- NAVIGATION -->
 <div id="navigation-bottom" class="navigation-bottom">
