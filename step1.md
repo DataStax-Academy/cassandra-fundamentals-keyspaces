@@ -33,6 +33,8 @@ CREATE KEYSPACE [ IF NOT EXISTS ] keyspace_name
     WITH REPLICATION = { replication_map };
 </pre>
 
+<div class="non-executable-code">TEST</div>
+
 A *keyspace name* can contain alphanumeric characters and underscores. 
 By default, names are case-insensitive, but case sensitivity can be forced by using double quotation marks around a name.
 
