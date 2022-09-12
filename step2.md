@@ -28,6 +28,25 @@
 docker exec -i -t Cassandra-1 bash -c 'nodetool status'
 ```
 
+If the cluster only has one node in datacenter `DC-West`, **wait for the second node in datacenter `DC-East` to join** and run `nodetool status` again. The output should be similar to:
+
+<pre class = >
+Datacenter: DC-East
+===================
+Status=Up/Down
+|/ State=Normal/Leaving/Joining/Moving
+--  Address     Load       Tokens  Owns (effective)  Host ID                               Rack 
+UN  172.17.0.3  38.05 KiB  16      100.0%            e5eb2dda-ed95-4081-9f45-f3903cd21a23  rack1
+
+Datacenter: DC-West
+===================
+Status=Up/Down
+|/ State=Normal/Leaving/Joining/Moving
+--  Address     Load       Tokens  Owns (effective)  Host ID                               Rack 
+UN  172.17.0.2  74.12 KiB  16      100.0%            bc1c6aa2-b3fd-45a6-8e62-db4d420fbfdc  rack1
+</pre>
+
+
 Take a note of the datacenter names and how many nodes are in each datacenter. 
 Since the cluster has only two nodes, we can have at most two replicas. 
 In a real-life production cluster, you can usually expect to have 3 or more nodes per datacenter and replication factors of 3 or higher.
