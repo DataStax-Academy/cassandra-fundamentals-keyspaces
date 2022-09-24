@@ -30,7 +30,7 @@ docker exec -i -t Cassandra-1 bash -c 'nodetool status'
 
 If the cluster only has one node in datacenter `DC-West`, **wait for the second node in datacenter `DC-East` to join** and run `nodetool status` again. The output should be similar to:
 
-<pre class = >
+<pre class="non-executable-code">
 Datacenter: DC-East
 ===================
 Status=Up/Down
